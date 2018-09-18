@@ -20,6 +20,18 @@ namespace InheritanceDemo {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            SuperHero sup = new SuperHero();
+            SuperHero sup2 = new SuperHero();
+            sup2.FirstName = "Super";
+            sup2.LastName = "Man";
+            Person per = new Person();
+
+            tbSuperOut.Text = sup.FullName;
+            tbSuperOut.Text += "\r\n" + sup2.FullName;
+            tbPersonOut.Text = per.FullName;
+                
+                
+            
         }
     }
 }
