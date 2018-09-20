@@ -10,8 +10,10 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <TextBlock x:Name="tbSuperOut"  FontSize="20" ></TextBlock>
         <TextBlock x:Name="tbPersonOut" FontSize="20"  Grid.Row="1" ></TextBlock>
+        <Button x:Name="btnDoSomething" Content="Click Me" Grid.Row="2" Click="btnDoSomething_Click" />
     </Grid>
 </Window>

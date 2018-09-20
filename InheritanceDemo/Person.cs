@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace InheritanceDemo {
-    class Person {
+    abstract class Person {
         #region Private Variables
         protected String _FirstName;
         private String _MiddleName;
@@ -42,14 +42,14 @@ namespace InheritanceDemo {
             SetStartingValues(fName, "Unknown", DateTime.MinValue);
         }
         /// <summary>
-        /// Create a person
-        /// </summary>
-        /// <param name="fName">First name of person</param>
-        /// <param name="lName">Last name of person</param>
-        public Person(string fName, string lName) {
-            SetStartingValues(fName, lName, DateTime.MinValue);
+        ///// Create a person
+        ///// </summary>
+        ///// <param name="fName">First name of person</param>
+        ///// <param name="lName">Last name of person</param>
+        //public Person(string fName, string lName) {
+        //    SetStartingValues(fName, lName, DateTime.MinValue);
 
-        }
+        //}
         /// <summary>
         /// Create a person
         /// </summary>
@@ -177,6 +177,15 @@ namespace InheritanceDemo {
         }
 
 
+
+        #endregion
+
+        #region Methods
+        public string Yell() {
+            return "Boo";
+        }
+
+        public abstract string Call();
 
         #endregion
 

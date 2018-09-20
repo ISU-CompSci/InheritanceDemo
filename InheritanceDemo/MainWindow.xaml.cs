@@ -18,20 +18,68 @@ namespace InheritanceDemo {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+       private SuperHero _SupOut = new SuperHero();
+        private int[] numbers = new int[5];
+        private Person[] supers = new Person[7];
         public MainWindow() {
             InitializeComponent();
             SuperHero sup = new SuperHero();
+            sup.EyeColor = Person.Colors.Brown;
             SuperHero sup2 = new SuperHero();
             sup2.FirstName = "Super";
             sup2.LastName = "Man";
-            Person per = new Person();
+            //Person per = new Person();
+
+            //per.EyeColor = Person.Colors.Black;
 
             tbSuperOut.Text = sup.FullName;
             tbSuperOut.Text += "\r\n" + sup2.FullName;
-            tbPersonOut.Text = per.FullName;
-                
-                
+           // tbPersonOut.Text = per.FullName;
             
+            
+        }
+
+        private void btnDoSomething_Click(object sender, RoutedEventArgs e) {
+
+            SuperHero h = new SuperHero();
+            h.Alias = "Marty";
+
+            _SupOut = new SuperHero();
+
+            numbers[0] = 5;
+            supers[0] = new SuperHero("bob","jones");
+            supers[1] = h;
+            supers[2] = _SupOut;
+            
+
+            Person dude = h;
+            SuperHero hero = (SuperHero)dude;
+
+            Button btn = (Button)sender;
+
+
+            int a = 6;
+            double b = a;
+            int c = (int)b;
+
+
+           
+            Villian v = new Villian();
+            Person notDude = new Villian();
+
+            supers[4] = v;
+
+            int index = 0;
+            foreach (Person p in supers) {
+                if (p != null) {
+                    tbPersonOut.Text += index + ": "
+                        + p.Yell()+ "|" + p.Call() + "\r\n";
+                } else {
+                    tbPersonOut.Text += index + ": null\r\n";
+                }
+                index++;
+            }
+
         }
     }
 }

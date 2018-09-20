@@ -14,6 +14,12 @@ namespace InheritanceDemo {
             LastName = "the Awesome";
         }
 
+        public SuperHero(string fName, string lName)
+            : base(fName, lName, new DateTime(2002, 2, 25)) {
+            //FirstName = fName;
+            //LastName = lName;
+        }
+
         public string Power {
             get {
                 return _Power;
@@ -30,8 +36,11 @@ namespace InheritanceDemo {
             set {
                 _Alias = value;
             }
+
         }
 
-
+        public override string Call() {
+            return "Whatz up!";
+        }
     }
 }
