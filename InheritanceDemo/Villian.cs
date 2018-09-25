@@ -16,5 +16,9 @@ namespace InheritanceDemo {
         public override string Call() {
             return "Amiga";
         }
+
+        public override string ToString() {
+            return "I am bad guy";
+        }
     }
 }

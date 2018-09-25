@@ -72,13 +72,32 @@ namespace InheritanceDemo {
             int index = 0;
             foreach (Person p in supers) {
                 if (p != null) {
-                    tbPersonOut.Text += index + ": "
-                        + p.Yell()+ "|" + p.Call() + "\r\n";
+                    //tbPersonOut.Text += index + ": "
+                    //    + p.Yell()+ "|" + p.Call() + "\r\n";
+                    tbPersonOut.Text += index + ": " + p.ToString() + "\r\n";
                 } else {
                     tbPersonOut.Text += index + ": null\r\n";
                 }
                 index++;
             }
+
+            tbSuperOut.Text = h.Yell() + "|" + h.Call() + "\r\n";
+            tbSuperOut.Text += v.Yell() + "|" + v.Call() + "\r\n";
+
+
+        }
+
+        private void btnCopyStuff_Click(object sender, RoutedEventArgs e) {
+
+            SuperHero spiderman = new SuperHero("Peter", "Parker");
+
+            SuperHero theClone = spiderman.CloneMe();
+            theClone = spiderman;
+            theClone.FirstName = "Miles";
+            spiderman.LastName = "Morales";
+
+            tbSuperOut.Text = spiderman.FullName;
+            tbPersonOut.Text = theClone.FullName;
 
         }
     }

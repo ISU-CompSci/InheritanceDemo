@@ -181,7 +181,7 @@ namespace InheritanceDemo {
         #endregion
 
         #region Methods
-        public string Yell() {
+        public virtual string Yell() {
             return "Boo";
         }
 
@@ -189,6 +189,9 @@ namespace InheritanceDemo {
 
         #endregion
 
+        public override string ToString() {
+            return FullName;
+        }
 
     }
 }

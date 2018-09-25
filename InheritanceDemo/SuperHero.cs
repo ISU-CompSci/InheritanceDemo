@@ -39,8 +39,24 @@ namespace InheritanceDemo {
 
         }
 
+        public override string Yell() {
+            return "Huzzah!" + base.Yell() ;
+        }
+
         public override string Call() {
             return "Whatz up!";
         }
+
+        public SuperHero CloneMe() {
+            //return this; // Shallow copy
+            // return new SuperHero(); // New Object
+            SuperHero myClone = new SuperHero();
+            myClone.FirstName = this.FirstName;
+            myClone.LastName = this.LastName;
+            myClone.DateOfBirth = this.DateOfBirth;
+
+            return myClone;
+        }
+
     }
 }

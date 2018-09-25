@@ -12,8 +12,13 @@
             <RowDefinition />
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         <TextBlock x:Name="tbSuperOut"  FontSize="20" ></TextBlock>
         <TextBlock x:Name="tbPersonOut" FontSize="20"  Grid.Row="1" ></TextBlock>
         <Button x:Name="btnDoSomething" Content="Click Me" Grid.Row="2" Click="btnDoSomething_Click" />
+        <Button x:Name="btnCopyStuff" Content="Copy Things" Grid.Row="2" Grid.Column="1" Click="btnCopyStuff_Click" />
     </Grid>
 </Window>
